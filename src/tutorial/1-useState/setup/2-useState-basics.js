@@ -1,7 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const UseStateBasics = () => {
-  return <h2>useState basic example</h2>;
+  const [title, setTitle] = useState("A good title");
+  const handleClick = () => {
+    title === "A good title"
+      ? setTitle("A better title")
+      : setTitle("A good title");
+  };
+  return (
+    <>
+      <h2>{title}</h2>
+      <button className="btn" onClick={handleClick}>
+        change title
+      </button>
+    </>
+  );
 };
 
 export default UseStateBasics;
